@@ -16,9 +16,28 @@
 
     <link rel="stylesheet" href="./styles/tw.css" />
   </head>
-  <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
+  <body class="bg-green-200">
+    <main>
+      <div
+        id="boxentering"
+        class="flex flex-col justify-center items-center h-screen"
+      >
+        <section id="head">
+          <img src="./images/logo.svg" alt="" />
+        </section>
+        <div
+          id="centeredbox"
+          class="flex flex-col md:flex-row justify-center items-center gap-5"
+        >
+          <div id="upper" class="bg-green-400">
+            Bill Select Tip % 5% 10% 15% 25% 50%
+          </div>
+          <div id="lower" class="bg-green-700">
+            Custom Number of People Tip Amount / person Total / person Reset
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
   <footer class="mt-12">
     <h2 class="sr-only">Attributions</h2>
@@ -38,8 +57,8 @@
       >. <br />
       <p>
         Source code:
-        <a href="https://github.com/vanhog/tip-calculator-fe"
-          >https://github.com/vanhog/tip-calculator-fe</a
+        <a href="https://github.com/vanhog/tip-calculator-frontendmentor"
+          >https://github.com/vanhog/tip-calculator-frontendmentor</a
         >
       </p>
       <p>For training use only. Do not use in production. No warranty.</p>

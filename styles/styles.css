@@ -1,15 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
 @theme {
   --color-attribution: hsl(228, 45%, 44%);
+  --font-spacemono: "Space Mono", monospace;
 }
 
 @layer components {
+  .tp-1 {
+    /*text-preset*/
+    @apply text-5xl leading-[71px] tracking-[-1px] font-bold;
+  }
+  .tp-2 {
+    @apply text-[32px] leading-[47px] tracking-[-0.67px] font-bold;
+  }
+  .tp-3 {
+    @apply text-2xl leading-[36px] tracking-normal font-bold;
+  }
+  .tp-4 {
+    @apply text-[20px] leading-[30px] tracking-normal font-bold;
+  }
+  .tp-5 {
+    @apply text-[16px] leading-[24px] tracking-normal font-bold;
+  }
+  .tp-6 {
+    @apply text-[13-px] leading-[19px] tracking-normal font-bold;
+  }
   .attribution {
-    @apply text-sm text-center;
+    @apply text-sm text-center font-spacemono;
   }
 
   .attribution a {
-    @apply text-attribution;
+    @apply text-attribution font-spacemono;
   }
 }
