@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-attribution: hsl(228, 45%, 44%);
+}
+
+@layer components {
+  .attribution {
+    @apply text-sm text-center;
+  }
+
+  .attribution a {
+    @apply text-attribution;
+  }
+}
