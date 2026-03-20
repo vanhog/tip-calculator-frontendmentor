@@ -23,18 +23,86 @@
         class="flex flex-col justify-center items-center h-screen"
       >
         <section id="head">
-          <img src="./images/logo.svg" alt="" />
+          <img src="./images/logo.svg" alt="Splitter Logo" class="my-10" />
         </section>
         <div
           id="centeredbox"
-          class="flex flex-col md:flex-row justify-center items-center gap-5"
+          class="flex flex-col md:flex-row justify-center items-center gap-3 bg-white w-[375px] rounded-2xl py-8.5 px-6"
         >
-          <div id="upper" class="bg-green-400">
-            Bill Select Tip % 5% 10% 15% 25% 50%
-          </div>
-          <div id="lower" class="bg-green-700">
-            Custom Number of People Tip Amount / person Total / person Reset
-          </div>
+          <section id="upper" class="bg-white">
+            <!--Input amount------------------------------------------------------->
+            <article>
+              <label for="bill-amount"
+                ><span class="tp-5">Bill </span>
+                <input
+                  id="bill-amount"
+                  type="text"
+                  placeholder="0"
+                  class="w-full bg-gray-300 rounded-md p-1 text-right tp-3"
+                />
+              </label>
+            </article>
+            <!--Input amount ------------------------------------------------------->
+
+            <!--Buttons ------------------------------------------------------->
+            <article class="my-8">
+              <label for="tip-select"
+                ><span class="tp-5 text-gray-500">Select tip %</span>
+                <div
+                  class="grid grid-cols-2 justify-between items-center gap-3"
+                >
+                  <button id="1" class="button-class tp-3">5%</button>
+                  <button id="2" class="button-class tp-3">10%</button
+                  ><button id="3" class="button-class tp-3">15%</button>
+                  <button id="4" class="button-class tp-3">25%</button
+                  ><button id="5" class="button-class tp-3">50%</button>
+                  <button id="6" class="button-class tp-3 bg-green-200">
+                    Custom
+                  </button>
+                </div>
+              </label>
+            </article>
+            <!--Buttons ------------------------------------------------------->
+
+            <!--Input people------------------------------------------------------->
+            <article>
+              <label for="num-people"
+                ><span class="tp-5">Number of people </span>
+                <input
+                  id="num-people"
+                  type="text"
+                  placeholder="0"
+                  class="w-full bg-gray-300 rounded-md p-1 text-right tp-3"
+                />
+              </label>
+            </article>
+            <!--Input people ------------------------------------------------------->
+          </section>
+          <section id="lower" class="bg-green-900 rounded-2xl p-3">
+            <!--Output tip/person------------------------------------------------>
+            <article class="flex flex-row justify-between items-center">
+              <div>
+                <span class="tp-5">Tip amount</span> <br /><span class="tp-6"
+                  >/ person</span
+                >
+              </div>
+              <div class="tp-2-mobile">$ <span>0.00</span></div>
+            </article>
+            <!--Output tip/person------------------------------------------------>
+            <!--Output total/person---------------------------------------------->
+            <article class="flex flex-row justify-between items-center">
+              <div>
+                <span class="tp-5">Total amount</span> <br /><span class="tp-6"
+                  >/ person</span
+                >
+              </div>
+              <div class="tp-2-mobile">$ <span>0.00</span></div>
+            </article>
+            <!--Output total/person---------------------------------------------->
+            <!--Reset button----------------------------------------------------->
+            <button type="button" class="p-2">Reset</button>
+            <!--Reset button----------------------------------------------------->
+          </section>
         </div>
       </div>
     </main>

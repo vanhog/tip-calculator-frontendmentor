@@ -9,8 +9,10 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-green-200: oklch(92.5% 0.084 155.995);
-    --color-green-400: oklch(79.2% 0.209 151.711);
-    --color-green-700: oklch(52.7% 0.154 150.069);
+    --color-green-900: oklch(39.3% 0.095 152.535);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
@@ -20,6 +22,9 @@
     --text-5xl--line-height: 1;
     --font-weight-bold: 700;
     --tracking-normal: 0em;
+    --radius-md: 0.375rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-attribution: hsl(228, 45%, 44%);
@@ -192,6 +197,12 @@
   .start {
     inset-inline-start: var(--spacing);
   }
+  .my-8 {
+    margin-block: calc(var(--spacing) * 8);
+  }
+  .my-10 {
+    margin-block: calc(var(--spacing) * 10);
+  }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
@@ -201,11 +212,20 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .table {
     display: table;
   }
   .h-screen {
     height: 100vh;
+  }
+  .w-\[375px\] {
+    width: 375px;
+  }
+  .w-full {
+    width: 100%;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -213,30 +233,72 @@
   .resize {
     resize: both;
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
   }
   .items-center {
     align-items: center;
   }
+  .justify-between {
+    justify-content: space-between;
+  }
   .justify-center {
     justify-content: center;
   }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
   }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
+  }
   .bg-green-200 {
     background-color: var(--color-green-200);
   }
-  .bg-green-400 {
-    background-color: var(--color-green-400);
+  .bg-green-900 {
+    background-color: var(--color-green-900);
   }
-  .bg-green-700 {
-    background-color: var(--color-green-700);
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .py-8\.5 {
+    padding-block: calc(var(--spacing) * 8.5);
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
   }
   .underline {
     text-decoration-line: underline;
@@ -253,6 +315,7 @@
 }
 @layer components {
   .tp-1 {
+    font-family: var(--font-spacemono);
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
     --tw-leading: 71px;
@@ -263,6 +326,7 @@
     letter-spacing: -1px;
   }
   .tp-2 {
+    font-family: var(--font-spacemono);
     font-size: 32px;
     --tw-leading: 47px;
     line-height: 47px;
@@ -271,7 +335,16 @@
     --tw-tracking: -0.67px;
     letter-spacing: -0.67px;
   }
+  .tp-2-mobile {
+    font-family: var(--font-spacemono);
+    font-size: 32px;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    --tw-tracking: -0.67px;
+    letter-spacing: -0.67px;
+  }
   .tp-3 {
+    font-family: var(--font-spacemono);
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
     --tw-leading: 36px;
@@ -282,6 +355,7 @@
     letter-spacing: var(--tracking-normal);
   }
   .tp-4 {
+    font-family: var(--font-spacemono);
     font-size: 20px;
     --tw-leading: 30px;
     line-height: 30px;
@@ -291,6 +365,7 @@
     letter-spacing: var(--tracking-normal);
   }
   .tp-5 {
+    font-family: var(--font-spacemono);
     font-size: 16px;
     --tw-leading: 24px;
     line-height: 24px;
@@ -300,6 +375,7 @@
     letter-spacing: var(--tracking-normal);
   }
   .tp-6 {
+    font-family: var(--font-spacemono);
     --tw-leading: 19px;
     line-height: 19px;
     --tw-font-weight: var(--font-weight-bold);
@@ -307,6 +383,12 @@
     --tw-tracking: var(--tracking-normal);
     letter-spacing: var(--tracking-normal);
     color: 13-px;
+  }
+  .button-class {
+    border-radius: var(--radius-xl);
+    background-color: var(--color-green-900);
+    padding: calc(var(--spacing) * 3);
+    color: var(--color-white);
   }
   .attribution {
     text-align: center;
