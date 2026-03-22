@@ -2,8 +2,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-attribution: hsl(228, 45%, 44%);
   --font-spacemono: "Space Mono", monospace;
+
+  /* ===== GREY ===== */
+  --color-tc-grey-600: oklch(0.45 0.06 200);
+  --color-tc-grey-550: oklch(0.52 0.05 200);
+  --color-tc-grey-500: oklch(0.55 0.04 200);
+  --color-tc-grey-400: oklch(0.62 0.04 200);
+  --color-tc-grey-300: oklch(0.7 0.04 200);
+  --color-tc-grey-200: oklch(0.86 0.05 200);
+  --color-tc-grey-50: oklch(0.97 0.02 200);
+
+  /* ===== GREEN ===== */
+  --color-tc-green-900: oklch(0.35 0.08 190);
+  --color-tc-green-800: oklch(0.42 0.08 190);
+  --color-tc-green-750: oklch(0.48 0.08 190);
+  --color-tc-green-400: oklch(0.72 0.13 170);
+  --color-tc-green-200: oklch(0.88 0.08 170);
+
+  /* ===== ORANGE ===== */
+  --color-tc-orange-400: oklch(0.68 0.16 35);
+
+  /* ===== SPECIAL ===== */
+  --color-attribution: oklch(0.55 0.12 260);
 }
 
 @layer components {
@@ -33,7 +54,7 @@
     @apply p-3 bg-green-900 rounded-xl  text-white;
   }
   .attribution {
-    @apply text-sm text-center font-spacemono;
+    @apply text-sm text-center font-spacemono text-xs;
   }
 
   .attribution a {
