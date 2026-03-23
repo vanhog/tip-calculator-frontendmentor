@@ -14,10 +14,10 @@
   --color-tc-grey-50: oklch(0.97 0.02 200);
 
   /* ===== GREEN ===== */
-  --color-tc-green-900: #00474b; /*oklch(0.35 0.08 190);*/
+  --color-tc-green-900: oklch(0.35 0.08 190);
   --color-tc-green-800: oklch(0.42 0.08 190);
   --color-tc-green-750: oklch(0.48 0.08 190);
-  --color-tc-green-400: #26c2ae; /*oklch(0.72 0.13 170);*/
+  --color-tc-green-400: oklch(0.72 0.13 170);
   --color-tc-green-200: oklch(0.88 0.08 170);
 
   /* ===== ORANGE ===== */
@@ -51,7 +51,7 @@
     @apply text-[13-px] leading-[19px] tracking-normal font-bold font-spacemono;
   }
   .button-class {
-    @apply px-3 py-1 bg-green-900 rounded-md  text-white hover:bg-tc-green-400 hover:text-tc-green-900;
+    @apply px-3 lg:p-3 py-1 bg-tc-green-900 rounded-md  text-white hover:bg-tc-green-400 hover:text-tc-green-900;
   }
   .attribution {
     @apply text-sm text-center font-spacemono text-xs;

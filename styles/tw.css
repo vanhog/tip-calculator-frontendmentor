@@ -8,6 +8,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-orange-400: oklch(75% 0.183 55.934);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-green-900: oklch(39.3% 0.095 152.535);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -30,10 +32,10 @@
     --color-tc-grey-550: oklch(0.52 0.05 200);
     --color-tc-grey-500: oklch(0.55 0.04 200);
     --color-tc-grey-400: oklch(0.62 0.04 200);
-    --color-tc-grey-200: oklch(0.86 0.05 200);
     --color-tc-grey-50: oklch(0.97 0.02 200);
-    --color-tc-green-900: #00474b;
-    --color-tc-green-400: #26c2ae;
+    --color-tc-green-900: oklch(0.35 0.08 190);
+    --color-tc-green-750: oklch(0.48 0.08 190);
+    --color-tc-green-400: oklch(0.72 0.13 170);
     --color-tc-green-200: oklch(0.88 0.08 170);
     --color-tc-orange-400: oklch(0.68 0.16 35);
     --color-attribution: oklch(0.55 0.12 260);
@@ -205,9 +207,6 @@
   .start {
     inset-inline-start: var(--spacing);
   }
-  .m-5 {
-    margin: calc(var(--spacing) * 5);
-  }
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
   }
@@ -232,11 +231,8 @@
   .mt-25 {
     margin-top: calc(var(--spacing) * 25);
   }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
   }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
@@ -264,6 +260,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .min-w-\[327px\] {
+    min-width: 327px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -315,17 +314,23 @@
   .border-tc-grey-50 {
     border-color: var(--color-tc-grey-50);
   }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
+  }
   .bg-green-900 {
     background-color: var(--color-green-900);
   }
   .bg-tc-green-400 {
     background-color: var(--color-tc-green-400);
   }
+  .bg-tc-green-750 {
+    background-color: var(--color-tc-green-750);
+  }
+  .bg-tc-green-900 {
+    background-color: var(--color-tc-green-900);
+  }
   .bg-tc-grey-50 {
     background-color: var(--color-tc-grey-50);
-  }
-  .bg-tc-grey-200 {
-    background-color: var(--color-tc-grey-200);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -338,6 +343,9 @@
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -418,9 +426,24 @@
       background-color: var(--color-tc-grey-50);
     }
   }
-  .md\:flex-row {
+  .md\:w-\[457px\] {
     @media (width >= 48rem) {
-      flex-direction: row;
+      width: 457px;
+    }
+  }
+  .md\:min-w-\[457px\] {
+    @media (width >= 48rem) {
+      min-width: 457px;
+    }
+  }
+  .md\:min-w-\[608px\] {
+    @media (width >= 48rem) {
+      min-width: 608px;
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .md\:rounded-2xl {
@@ -428,14 +451,44 @@
       border-radius: var(--radius-2xl);
     }
   }
+  .md\:p-9 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 9);
+    }
+  }
+  .lg\:h-\[417px\] {
+    @media (width >= 64rem) {
+      height: 417px;
+    }
+  }
+  .lg\:h-\[481px\] {
+    @media (width >= 64rem) {
+      height: 481px;
+    }
+  }
+  .lg\:w-\[920px\] {
+    @media (width >= 64rem) {
+      width: 920px;
+    }
+  }
   .lg\:min-w-\[375px\] {
     @media (width >= 64rem) {
       min-width: 375px;
     }
   }
+  .lg\:min-w-\[413px\] {
+    @media (width >= 64rem) {
+      min-width: 413px;
+    }
+  }
   .lg\:grid-cols-3 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:flex-row {
+    @media (width >= 64rem) {
+      flex-direction: row;
     }
   }
 }
@@ -512,7 +565,7 @@
   }
   .button-class {
     border-radius: var(--radius-md);
-    background-color: var(--color-green-900);
+    background-color: var(--color-tc-green-900);
     padding-inline: calc(var(--spacing) * 3);
     padding-block: calc(var(--spacing) * 1);
     color: var(--color-white);
@@ -525,6 +578,9 @@
       @media (hover: hover) {
         color: var(--color-tc-green-900);
       }
+    }
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 3);
     }
   }
   .attribution {
