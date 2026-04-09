@@ -35,13 +35,13 @@
             >
               <!--Input amount------------------------------------------------------->
               <article>
-                <label for="bill-amount"
+                <label for="billAmount"
                   ><span class="tp-5 text-tc-grey-500">Bill </span>
                   <input
-                    id="bill-amount"
-                    type="text"
+                    id="billAmount"
                     placeholder="0"
-                    class="w-full bg-tc-grey-50 rounded-md p-1 mt-3 text-right tp-3 border border-tc-grey-50 focus:outline-none focus:border focus:border-tc-green-400 active:bg-tc-grey-50"
+                    type="text"
+                    class="w-full rounded-md p-1 mt-3 tp-3 text-right bg-tc-grey-50 border border-tc-grey-50 focus:outline-none focus:bg-white border border-black"
                   />
                 </label>
               </article>
@@ -49,43 +49,42 @@
 
               <!--Buttons ------------------------------------------------------->
               <article>
-                <label for="tip-select"
+                <label
                   ><span class="tp-5 text-tc-grey-500">Select tip %</span>
-                  <div
+                  <ul
+                    id="tipSelect"
                     class="grid grid-cols-2 md:grid-cols-3 justify-between items-center gap-3"
                   >
-                    <button id="1" class="button-class tp-3">5%</button>
-                    <button id="2" class="button-class tp-3">10%</button
-                    ><button id="3" class="button-class tp-3">15%</button>
-                    <button id="4" class="button-class tp-3">25%</button
-                    ><button id="5" class="button-class tp-3">50%</button>
+                    <button id="q5" class="button-class tp-3">5%</button>
+                    <button id="q10" class="button-class tp-3">10%</button
+                    ><button id="q15" class="button-class tp-3">15%</button>
+                    <button id="q25" class="button-class tp-3">25%</button
+                    ><button id="q50" class="button-class tp-3">50%</button>
                     <button
                       id="6"
                       class="button-class tp-3 bg-tc-grey-50 text-tc-grey-550"
                     >
                       Custom
                     </button>
-                  </div>
+                  </ul>
                 </label>
               </article>
               <!--Buttons ------------------------------------------------------->
 
               <!--Input people------------------------------------------------------->
               <article>
-                <label for="num-people">
+                <label for="numPeople">
                   <div class="flex flex-row justify-between items-center">
-                    <span class="tp-5 text-tc-grey-500">Number of people </span
-                    ><span
-                      id="errormessage"
-                      class="tp-5 text-tc-orange-400 hidden"
-                      >Can't be zero</span
-                    >
+                    <span class="tp-5 text-tc-grey-500">Number of people </span>
+                    <div id="errmsg" class="tp-5 text-tc-orange-400 hidden">
+                      Can't be zero
+                    </div>
                   </div>
                   <input
-                    id="num-people"
+                    id="numPeople"
                     type="text"
-                    placeholder="0"
-                    class="mt-3 w-full bg-tc-grey-50 rounded-md p-1 text-right tp-3 border border-tc-grey-50 focus:outline-none focus:border focus:border-tc-green-400 active:bg-tc-grey-50"
+                    placeholder="1"
+                    class="mt-3 w-full rounded-md p-1 text-right tp-3 border border-tc-grey-50 bg-tc-grey-50 focus:outline-none focus:border focus:border-tc-green-400 active:bg-tc-grey-50"
                   />
                 </label>
               </article>
@@ -110,7 +109,7 @@
                     class="tp-2-mobile text-tc-green-400 flex flex-row justify-end"
                   >
                     <span> $</span>
-                    <span>0.00</span>
+                    <span id="tipAmountValue">0.00</span>
                   </div>
                 </article>
                 <!--Output tip/person------------------------------------------------>
@@ -127,15 +126,16 @@
                   <div
                     class="tp-2-mobile text-tc-green-400 flex flex-row justify-end"
                   >
-                    <span> $</span> <span>0.00</span>
+                    <span> $</span> <span id="perPersonValue">0.00</span>
                   </div>
                 </article>
               </div>
               <!--Output total/person---------------------------------------------->
               <!--Reset button----------------------------------------------------->
               <button
+                id="resetButton"
                 type="button"
-                class="w-full rounded-lg p-2 my-3 tp-4 uppercase bg-tc-green-750 text-tc-green-900 hover:bg-tc-green-200 hover:text-tc-green-900"
+                class="w-full rounded-lg p-2 my-3 tp-4 uppercase bg-tc-green-750 text-tc-green-900"
               >
                 Reset
               </button>
@@ -168,6 +168,7 @@
 
         <p>For training use only. Do not use in production. No warranty.</p>
       </div>
+      <script src="./src/main.js"></script>
     </footer>
   </body>
 </html>
