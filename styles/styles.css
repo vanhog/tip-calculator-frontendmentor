@@ -58,10 +58,22 @@
     @apply bg-tc-green-400 text-tc-green-900;
   }
   .attribution {
-    @apply text-sm text-center font-spacemono text-xs;
+    @apply text-sm text-center font-spacemono;
   }
 
   .attribution a {
     @apply text-attribution font-spacemono;
+  }
+}
+
+@layer utilities {
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
   }
 }

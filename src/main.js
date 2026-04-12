@@ -1,10 +1,9 @@
 let serviceQuality = 0;
 let billAmountValue = 0;
-let numPeopleValue = 1;
+let numPeopleValue = 0;
 
 let resetButton = document.getElementById('resetButton');
 let errorMsg = document.getElementById('errmsg');
-console.log(errorMsg);
 
 let billAmount = document.getElementById('billAmount');
 let numPeople = document.getElementById('numPeople');
@@ -19,12 +18,21 @@ let qualityButton_q15 = document.getElementById('q15');
 let qualityButton_q25 = document.getElementById('q25');
 let qualityButton_q50 = document.getElementById('q50');
 
-function setError() {
-  console.log('this is setError');
+const qualityButtons = [
+  { button: qualityButton_q5, value: 0.05 },
+  { button: qualityButton_q10, value: 0.1 },
+  { button: qualityButton_q15, value: 0.15 },
+  { button: qualityButton_q25, value: 0.25 },
+  { button: qualityButton_q50, value: 0.5 },
+];
+
+const activeClasses = ['button-set'];
+
+function setNumPeopleError() {
   errorMsg.classList.remove('hidden');
 }
 
-function unsetError() {
+function unsetNumPeopleError() {
   errorMsg.classList.add('hidden');
 }
 
@@ -64,27 +72,34 @@ function setTip() {
   );
 }
 
-billAmount?.addEventListener('change', function () {
+billAmount?.addEventListener('input', function () {
   billAmountValue = Number(billAmount.value);
   if (isNaN(billAmountValue)) {
-    billAmount.style.backgroundColor = 'oklch(0.6412 0.2639 24.35 / 0.7)';
-    billAmount.value = '';
-    billAmount.placeholder = 'Please, input a valid amount ';
   } else {
     setTip();
   }
 });
 
 billAmount?.addEventListener('click', function () {
-  billAmount.value = ' ';
+  billAmount.value = '';
+});
+
+numPeople?.addEventListener('blur', function () {
+  numPeopleValue = Number(numPeople.value);
+  if (numPeopleValue < 1) {
+    setNumPeopleError();
+    activateReset();
+  } else {
+    setTip();
+  }
 });
 
 numPeople?.addEventListener('input', function () {
   numPeopleValue = Number(numPeople.value);
-  unsetError();
-
+  unsetNumPeopleError();
   if (isNaN(numPeopleValue)) {
-    setError();
+    setNumPeopleError();
+    activateReset();
   } else {
     setTip();
   }
@@ -108,24 +123,13 @@ resetButton?.addEventListener('click', function () {
     btn?.classList.remove(...activeClasses);
   });
 
-  unsetError();
+  unsetNumPeopleError();
   deactivateReset();
 });
-
-const qualityButtons = [
-  { button: qualityButton_q5, value: 0.05 },
-  { button: qualityButton_q10, value: 0.1 },
-  { button: qualityButton_q15, value: 0.15 },
-  { button: qualityButton_q25, value: 0.25 },
-  { button: qualityButton_q50, value: 0.5 },
-];
-
-const activeClasses = ['button-set'];
 
 qualityButtons.forEach(({ button, value }) => {
   button?.addEventListener('click', () => {
     serviceQuality = value;
-    console.log(value);
 
     qualityButtons.forEach(({ button: btn }) => {
       btn?.classList.remove(...activeClasses);
