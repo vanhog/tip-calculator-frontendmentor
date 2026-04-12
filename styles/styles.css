@@ -51,7 +51,7 @@
     @apply text-[13-px] leading-[19px] tracking-normal font-bold font-spacemono;
   }
   .button-class {
-    @apply px-3 lg:p-3 py-1 bg-tc-green-900 rounded-md  text-white hover:bg-tc-green-200;
+    @apply w-full px-3 lg:p-3 py-1 bg-tc-green-900 rounded-md  text-white hover:bg-tc-green-200;
   }
 
   .button-set {
