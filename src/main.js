@@ -115,7 +115,6 @@ resetButton?.addEventListener('click', function () {
   numPeople.value = '';
   tipAmount.innerText = '0.00';
   perPerson.innerText = '0.00';
-  serviceQuality = 0;
   billAmountValue = 0;
   numPeopleValue = 0;
 
