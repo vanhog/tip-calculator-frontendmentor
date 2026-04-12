@@ -106,7 +106,7 @@ numPeople?.addEventListener('input', function () {
 });
 
 numPeople?.addEventListener('click', function () {
-  numPeople.value = ' ';
+  numPeople.value = '';
 });
 
 resetButton?.addEventListener('click', function () {
