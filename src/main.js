@@ -1,22 +1,11 @@
-let serviceQuality = 0;
-let billAmountValue = 0;
-let numPeopleValue = 0;
+const resetButton = document.getElementById('resetButton');
+const errorMsg = document.getElementById('errmsg');
 
-let resetButton = document.getElementById('resetButton');
-let errorMsg = document.getElementById('errmsg');
-
-let billAmount = document.getElementById('billAmount');
-let numPeople = document.getElementById('numPeople');
-
-let tipAmount = document.getElementById('tipAmountValue');
-let totalBill = document.getElementById('totalBillValue');
-let perPerson = document.getElementById('perPersonValue');
-
-let qualityButton_q5 = document.getElementById('q5');
-let qualityButton_q10 = document.getElementById('q10');
-let qualityButton_q15 = document.getElementById('q15');
-let qualityButton_q25 = document.getElementById('q25');
-let qualityButton_q50 = document.getElementById('q50');
+const qualityButton_q5 = document.getElementById('q5');
+const qualityButton_q10 = document.getElementById('q10');
+const qualityButton_q15 = document.getElementById('q15');
+const qualityButton_q25 = document.getElementById('q25');
+const qualityButton_q50 = document.getElementById('q50');
 
 const qualityButtons = [
   { button: qualityButton_q5, value: 0.05 },
@@ -28,6 +17,16 @@ const qualityButtons = [
 
 const activeClasses = ['button-set'];
 
+let serviceQuality = 0;
+let billAmountValue = 0;
+let numPeopleValue = 0;
+
+let billAmount = document.getElementById('billAmount');
+let numPeople = document.getElementById('numPeople');
+
+let tipAmount = document.getElementById('tipAmountValue');
+let perPerson = document.getElementById('perPersonValue');
+
 function setNumPeopleError() {
   errorMsg.classList.remove('hidden');
   errorMsg.setAttribute('aria-hidden', 'false');
@@ -36,7 +35,7 @@ function setNumPeopleError() {
 
 function unsetNumPeopleError() {
   errorMsg.classList.add('hidden');
-  errorMsg.setAttribute('aria-hidde', 'true');
+  errorMsg.setAttribute('aria-hidden', 'true');
   numPeople.setAttribute('aria-invalid', 'false');
 }
 
@@ -79,6 +78,7 @@ function setTip() {
 billAmount?.addEventListener('input', function () {
   billAmountValue = Number(billAmount.value);
   if (isNaN(billAmountValue)) {
+    billAmount.value = 0;
   } else {
     setTip();
   }
