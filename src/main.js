@@ -40,8 +40,8 @@ function unsetNumPeopleError() {
 }
 
 function activateReset() {
-  resetButton.classList.remove('bg-tc-green-750');
-  resetButton.classList.add(
+  resetButton?.classList.remove('bg-tc-green-750');
+  resetButton?.classList.add(
     'bg-tc-green-400',
     'hover:bg-tc-green-200',
     'hover:text-tc-green-900',
@@ -49,12 +49,12 @@ function activateReset() {
 }
 
 function deactivateReset() {
-  resetButton.classList.remove(
+  resetButton?.classList.remove(
     'bg-tc-green-400',
     'hover:bg-tc-green-200',
     'hover:text-tc-green-900',
   );
-  resetButton.classList.add('bg-tc-green-750');
+  resetButton?.classList.add('bg-tc-green-750');
 }
 
 function setTip() {
@@ -131,6 +131,8 @@ resetButton?.addEventListener('click', function () {
 });
 
 qualityButtons.forEach(({ button, value }) => {
+  if (!button) return;
+
   button?.addEventListener('click', () => {
     serviceQuality = value;
 
