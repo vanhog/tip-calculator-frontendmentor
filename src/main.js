@@ -30,10 +30,14 @@ const activeClasses = ['button-set'];
 
 function setNumPeopleError() {
   errorMsg.classList.remove('hidden');
+  errorMsg.setAttribute('aria-hidden', 'false');
+  numPeople.setAttribute('aria-invalid', 'true');
 }
 
 function unsetNumPeopleError() {
   errorMsg.classList.add('hidden');
+  errorMsg.setAttribute('aria-hidde', 'true');
+  numPeople.setAttribute('aria-invalid', 'false');
 }
 
 function activateReset() {

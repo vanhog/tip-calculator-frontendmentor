@@ -35,91 +35,91 @@
             >
               <!--Input amount------------------------------------------------------->
               <article>
-                <label for="billAmount"
+                <label
                   ><span class="tp-5 text-tc-grey-500">Bill </span>
                   <input
                     id="billAmount"
                     placeholder="0"
                     type="number"
-                    style="
-                      background-image: url('./images/icon-dollar.svg');
-                      background-repeat: no-repeat;
-                      background-position-y: center;
-                      background-size: 5% 60%;
-                    "
-                    class="no-spinner w-full rounded-md p-1 mt-3 tp-3 text-tc-green-900 text-right bg-tc-grey-50 border border-tc-grey-50 focus:outline-none border border-black"
+                    inputmode="numeric"
+                    pattern="\d*"
+                    class="bg-[url('../images/icon-dollar.svg')] icon-label-style no-spinner w-full rounded-md p-1 mt-3 tp-3 text-tc-green-900 text-right bg-tc-grey-50 border border-tc-grey-50 focus:outline-none"
                   />
                 </label>
               </article>
               <!--Input amount ------------------------------------------------------->
 
               <!--Buttons ------------------------------------------------------->
-              <article>
-                <label
-                  ><span class="tp-5 text-tc-grey-500">Select tip %</span>
-                  <ul
-                    id="tipSelect"
-                    class="grid grid-cols-2 md:grid-cols-3 justify-between items-center gap-3"
-                  >
-                    <li>
-                      <button type="button" id="q5" class="button-class tp-3">
-                        5%
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" id="q10" class="button-class tp-3">
-                        10%
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" id="q15" class="button-class tp-3">
-                        15%
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" id="q25" class="button-class tp-3">
-                        25%
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" id="q50" class="button-class tp-3">
-                        50%
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        id="c6"
-                        type="button"
-                        class="button-class tp-3 bg-tc-grey-50 text-tc-grey-550"
-                      >
-                        Custom
-                      </button>
-                    </li>
-                  </ul>
-                </label>
-              </article>
+              <fieldset>
+                <legend class="my-3">
+                  <span class="tp-5 text-tc-grey-500">Select tip %</span>
+                </legend>
+                <ul
+                  id="tipSelect"
+                  class="grid grid-cols-2 md:grid-cols-3 justify-between items-center gap-3"
+                >
+                  <li>
+                    <button type="button" id="q5" class="button-class tp-3">
+                      5%
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" id="q10" class="button-class tp-3">
+                      10%
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" id="q15" class="button-class tp-3">
+                      15%
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" id="q25" class="button-class tp-3">
+                      25%
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" id="q50" class="button-class tp-3">
+                      50%
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      id="c6"
+                      type="button"
+                      class="button-class tp-3 bg-tc-grey-50 text-tc-grey-550"
+                    >
+                      Custom
+                    </button>
+                  </li>
+                </ul>
+              </fieldset>
               <!--Buttons ------------------------------------------------------->
 
               <!--Input people------------------------------------------------------->
               <article>
-                <label for="numPeople">
+                <label>
                   <div class="flex flex-row justify-between items-center">
                     <span class="tp-5 text-tc-grey-500">Number of people </span>
-                    <div id="errmsg" class="tp-5 text-tc-orange-400 hidden">
+                    <div
+                      id="errmsg"
+                      role="alert"
+                      class="tp-5 text-tc-orange-400 hidden"
+                      aria-live="assertive"
+                      aria-hidden="true"
+                    >
                       Can't be zero
                     </div>
                   </div>
+
                   <input
                     id="numPeople"
-                    type="text"
-                    style="
-                      background-image: url('./images/icon-person.svg');
-                      background-repeat: no-repeat;
-                      background-position-y: center;
-                      background-size: 5% 60%;
-                    "
-                    placeholder=""
-                    class="mt-3 w-full rounded-md p-1 text-right tp-3 text-tc-green-900 border border-tc-grey-50 bg-tc-grey-50 focus:outline-none focus:border focus:border-tc-green-400 active:bg-tc-grey-50"
+                    placeholder="0"
+                    type="number"
+                    inputmode="numeric"
+                    pattern="\d*"
+                    aria-invalid="false"
+                    class="bg-[url('../images/icon-person.svg')] icon-label-style no-spinner w-full rounded-md p-1 mt-3 tp-3 text-tc-green-900 text-right bg-tc-grey-50 border border-tc-grey-50 focus:outline-none border border-black"
                   />
                 </label>
               </article>

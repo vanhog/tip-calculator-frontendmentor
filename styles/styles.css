@@ -64,6 +64,12 @@
   .attribution a {
     @apply text-attribution font-spacemono;
   }
+
+  .icon-label-style {
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 5% 60%;
+  }
 }
 
 @layer utilities {

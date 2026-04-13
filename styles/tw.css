@@ -236,6 +236,9 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
   .h-full {
     height: 100%;
   }
@@ -250,6 +253,12 @@
   }
   .min-w-\[327px\] {
     min-width: 327px;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -313,6 +322,15 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[url\(\'\.\.\/images\/icon-dollar\.svg\'\)\] {
+    background-image: url('../images/icon-dollar.svg');
+  }
+  .bg-\[url\(\'\.\.\/images\/icon-person\.svg\'\)\] {
+    background-image: url('../images/icon-person.svg');
+  }
+  .bg-\[url\(\'\.\/images\/icon-person\.svg\'\)\] {
+    background-image: url('./images/icon-person.svg');
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -327,6 +345,9 @@
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
   .py-8\.5 {
     padding-block: calc(var(--spacing) * 8.5);
@@ -358,8 +379,18 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .blur {
     --tw-blur: blur(8px);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .hover\:bg-tc-green-200 {
@@ -376,26 +407,10 @@
       }
     }
   }
-  .focus\:border {
-    &:focus {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-  }
-  .focus\:border-tc-green-400 {
-    &:focus {
-      border-color: var(--color-tc-green-400);
-    }
-  }
   .focus\:outline-none {
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
-    }
-  }
-  .active\:bg-tc-grey-50 {
-    &:active {
-      background-color: var(--color-tc-grey-50);
     }
   }
   .md\:min-w-\[457px\] {
@@ -550,6 +565,11 @@
     font-family: var(--font-spacemono);
     color: var(--color-attribution);
   }
+  .icon-label-style {
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 5% 60%;
+  }
 }
 @layer utilities {
   .no-spinner::-webkit-outer-spin-button, .no-spinner::-webkit-inner-spin-button {
@@ -561,6 +581,11 @@
   }
 }
 @property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -634,6 +659,7 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
