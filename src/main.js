@@ -21,8 +21,8 @@ let serviceQuality = 0;
 let billAmountValue = 0;
 let numPeopleValue = 0;
 
-let billAmount = document.getElementById('billAmount');
-let numPeople = document.getElementById('numPeople');
+const billAmount = document.getElementById('billAmount');
+const numPeople = document.getElementById('numPeople');
 
 let tipAmount = document.getElementById('tipAmountValue');
 let perPerson = document.getElementById('perPersonValue');
@@ -87,6 +87,7 @@ billAmount?.addEventListener('input', function () {
   billAmountValue = Number(billAmount.value);
   if (isNaN(billAmountValue)) {
     billAmount.value = 0;
+    billAmountValue = 0;
   } else {
     setTip();
   }
