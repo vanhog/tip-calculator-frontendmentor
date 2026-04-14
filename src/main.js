@@ -24,16 +24,18 @@ let numPeopleValue = 0;
 const billAmount = document.getElementById('billAmount');
 const numPeople = document.getElementById('numPeople');
 
-let tipAmount = document.getElementById('tipAmountValue');
-let perPerson = document.getElementById('perPersonValue');
+const tipAmount = document.getElementById('tipAmountValue');
+const perPerson = document.getElementById('perPersonValue');
 
 function setNumPeopleError() {
+  if (!errorMsg || !numPeople) return;
   errorMsg.classList.remove('hidden');
   errorMsg.setAttribute('aria-hidden', 'false');
   numPeople.setAttribute('aria-invalid', 'true');
 }
 
 function unsetNumPeopleError() {
+  if (!errorMsg || !numPeople) return;
   errorMsg.classList.add('hidden');
   errorMsg.setAttribute('aria-hidden', 'true');
   numPeople.setAttribute('aria-invalid', 'false');
