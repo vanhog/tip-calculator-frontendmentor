@@ -40,6 +40,7 @@ function unsetNumPeopleError() {
 }
 
 function activateReset() {
+  if (!resetButton) return;
   resetButton?.classList.remove('bg-tc-green-750');
   resetButton?.classList.add(
     'bg-tc-green-400',
@@ -49,6 +50,7 @@ function activateReset() {
 }
 
 function deactivateReset() {
+  if (!resetButton) return;
   resetButton?.classList.remove(
     'bg-tc-green-400',
     'hover:bg-tc-green-200',
@@ -63,6 +65,12 @@ function setTip() {
   if (!(numPeopleValue > 0)) {
     numPeopleValue = 1;
   }
+
+  if (!tipAmount || !perPerson) {
+    console.warn('Expected output elements missing:', { tipAmount, perPerson });
+    return;
+  }
+
   tipAmount.innerText = String(
     ((billAmountValue * serviceQuality) / numPeopleValue).toFixed(2),
   );
@@ -137,7 +145,7 @@ qualityButtons.forEach(({ button, value }) => {
     serviceQuality = value;
 
     qualityButtons.forEach(({ button: btn }) => {
-      btn?.classList.remove(...activeClasses);
+      if (btn) btn?.classList.remove(...activeClasses);
     });
 
     button.classList.add(...activeClasses);
